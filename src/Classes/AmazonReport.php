@@ -116,6 +116,20 @@ class AmazonReport extends AmazonReportsCore
         return $this->rawreport;
     }
 
+    /**
+     * Gets the raw report data.
+     * This method will return <b>FALSE</b> if the data has not yet been retrieved.
+     * Please note that this data is often very large.
+     * @param string $path <p>filename to save the file in</p>
+     * @return string|boolean raw data string, or <b>FALSE</b> if data has not been retrieved yet
+     */
+    public function getRawReport() {
+        if (!isset($this->rawreport)){
+            return false;
+        }
+        return $this->rawreport;
+    }
+
 
     /**
      * Saves the raw report data to a path you specify
